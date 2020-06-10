@@ -1,0 +1,55 @@
+#include "myfriendwidget.h"
+#include "ui_myfriendwidget.h"
+
+#include <QBitmap>
+#include <QPainter>
+#include <QPoint>
+
+MyFriendWidget::MyFriendWidget(int _width, int _height, QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::MyFriendWidget)
+{
+    width = _width;
+    height = _height;
+    ui->setupUi(this);
+    ui->label_2->setFont(QFont("黑体",12));
+    ui->label_3->setFont(QFont("宋体",10));
+}
+
+MyFriendWidget::~MyFriendWidget()
+{
+    delete ui;
+}
+
+void MyFriendWidget::init(qulonglong id, QString name, QString sign, QPixmap image)
+{
+    friendId = id;
+    ui->label_2->setText(name);
+    ui->label_3->setText(sign);
+    QSize size(50,50);
+    QBitmap mask(size);
+    QPainter painter(&mask);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
+    painter.fillRect(0,0,size.width(),size.height(),Qt::white);
+    painter.setBrush(QColor(0,0,0));
+    painter.drawRoundedRect(0,0,size.width(),size.height(),25,25);
+    QPixmap result = image.scaled(size);
+    result.setMask(mask);
+    ui->label->setPixmap(result);
+}
+
+QString MyFriendWidget::getFriendName()
+{
+    return ui->label_2->text();
+}
+
+QString MyFriendWidget::getFriendSign()
+{
+    return ui->label_3->text();
+}
+
+const QPixmap *MyFriendWidget::getFriendImage()
+{
+    return ui->label->pixmap();
+}

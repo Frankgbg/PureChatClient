@@ -1,0 +1,12 @@
+QWidget,#label_2,#label_3{
+   color:white;
+}
+#label_4{
+   border-radius:42px;
+}
+#comboBox,lineEdit{
+    border: 0px;
+}
+#pushButton{
+    border-radius:10px;
+}

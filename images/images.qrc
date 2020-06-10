@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>chat/background.jpg</file>
+        <file>chat/background2.jpg</file>
+        <file>chat/background3.jpg</file>
+        <file>chat/emoj.png</file>
+        <file>chat/emoj2.png</file>
+        <file>headportrait/head.jpg</file>
+        <file>headportrait/head2.jpg</file>
+        <file>headportrait/cloud.jpg</file>
+        <file>homepage/chat_72px.ico</file>
+        <file>homepage/P_24px_blue.ico</file>
+        <file>homepage/P_24px_white.ico</file>
+        <file>additional/search_128px.ico</file>
+        <file>additional/create_128px.ico</file>
+        <file>login/head.jpg</file>
+        <file>login/sky.gif</file>
+        <file>emojs/cy.png</file>
+        <file>emojs/dk.png</file>
+        <file>emojs/dy.png</file>
+        <file>emojs/fd.png</file>
+        <file>emojs/gz.png</file>
+        <file>emojs/hanx.png</file>
+        <file>emojs/kb.png</file>
+        <file>emojs/ll.png</file>
+        <file>emojs/pz.png</file>
+        <file>emojs/tp.png</file>
+        <file>emojs/tx.png</file>
+        <file>emojs/wq.png</file>
+        <file>emojs/xjj.png</file>
+        <file>emojs/xk.png</file>
+        <file>emojs/xyx.png</file>
+        <file>emojs/yiw.png</file>
+        <file>emojs/zj.png</file>
+        <file>emojs/zk.png</file>
+    </qresource>
+</RCC>

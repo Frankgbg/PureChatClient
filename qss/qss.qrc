@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>login.qss</file>
+        <file>scrollbar.qss</file>
+    </qresource>
+</RCC>

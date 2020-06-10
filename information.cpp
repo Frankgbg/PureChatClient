@@ -108,7 +108,9 @@ void Information::receive(int type, const QString &msg)
             tips("群头像修改成功.");
             return ;
         }
-        ui->label_4->setPixmap(_image);
+        QPixmap result;
+        imageProcessing(result,_image);
+        ui->label_4->setPixmap(result);
         tips("群头像修改失败!");
     }
 }
@@ -133,6 +135,10 @@ void Information::on_pushButton_clicked()
                                                              tr("Images (*.png *.jpg *.bmp)"));
     if(file != ""){
         QPixmap original(file);
+        if(original.width()*1ull*original.height()/1024*original.depth()/1024 > 50){
+            tips("图片不得大于50KB");
+            return ;
+        }
         QPixmap pixmap;
         imageProcessing(pixmap,original);
         ui->label_4->setPixmap(pixmap);

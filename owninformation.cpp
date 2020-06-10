@@ -132,7 +132,9 @@ void OwnInformation::receive(int type, const QString &msg)
             tips("头像修改成功!");
             return ;
         }
-        ui->label_4->setPixmap(_ownImage);
+        QPixmap result;
+        imageProcessing(result,_ownImage);
+        ui->label_4->setPixmap(result);
         tips("头像修改失败!");
     }
 }
@@ -157,6 +159,10 @@ void OwnInformation::on_pushButton_clicked()
                                                              tr("Images (*.jpg)"));
     if(file != ""){
         QPixmap original(file);
+        if(original.width()*1ull*original.height()/1024*original.depth()/1024 > 50){
+            tips("图片不得大于50KB");
+            return ;
+        }
         QPixmap pixmap;
         imageProcessing(pixmap,original);
         ui->label_4->setPixmap(pixmap);
@@ -170,9 +176,12 @@ void OwnInformation::on_pushButton_clicked()
         case QMessageBox::Yes:
             emit updateImage(modifyOwnImageType,_ownId,original.scaled(QSize(100,100)),file.right(3));
             break;
-        case QMessageBox::No:
-            ui->label_4->setPixmap(_ownImage);
+        case QMessageBox::No:{
+            QPixmap result;
+            imageProcessing(result,_ownImage);
+            ui->label_4->setPixmap(result);
             break;
+        }
         default:break;
         }
     }

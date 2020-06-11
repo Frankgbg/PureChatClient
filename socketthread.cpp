@@ -48,7 +48,7 @@ void SocketThread::connectServer()
     if(!connectStatus){
         qDebug()<<"TCP重连";
         _socket->abort();
-        _socket->connectToHost("47.96.226.11",61314);
+        _socket->connectToHost("47.96.226.11",****);
         if(_socket->waitForConnected(500)){
             qDebug()<<"重连成功";
         }

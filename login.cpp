@@ -211,7 +211,7 @@ void Login::on_pushButton_clicked()
         connect(socket,SIGNAL(toUiUpdate(int,QString,qulonglong)),
                 this,SLOT(socketUpdate(int,QString)));
 
-        socket->connectToHost("47.96.226.11",61314);
+        socket->connectToHost("47.96.226.11",****);
 
         if(!socket->waitForConnected(300)){
             delete socket;
@@ -241,7 +241,7 @@ void Login::on_pushButton_clicked()
         connect(socket,SIGNAL(toUiUpdate(int,QString,qulonglong)),
                 this,SLOT(socketUpdate(int,QString)));
 
-        socket->connectToHost("47.96.226.11",61314);
+        socket->connectToHost("47.96.226.11",****);
 
         if(!socket->waitForConnected(300)){
             delete socket;
